@@ -7,7 +7,7 @@ class Source(Base):
         Base.__init__(self, vim)
 
         self.name = 'java'
-        self.mark = '[JC]'
+        self.mark = ''
         self.filetypes = ['java']
         self.min_pattern_length = 0
         self.is_bytepos = True
