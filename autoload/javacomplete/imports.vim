@@ -141,7 +141,7 @@ function! javacomplete#imports#SearchStaticImports(name, fullmatch)
   endif
 
   " read type info which are not in cache
-  let commalist = ''
+  " let commalist = ''
   for typename in candidates
     if !has_key(g:JavaComplete_Cache, typename)
       let res = javacomplete#server#Communicate('-E', typename, 's:SearchStaticImports')
@@ -241,6 +241,7 @@ function! s:AddImport(import)
 
   let imports = javacomplete#imports#GetImports('imports')
   if empty(imports)
+    let insertline = 1
     for i in range(line('$'))
       if getline(i) =~ '^package\s\+.*\;$'
         let insertline = i + 2
@@ -248,9 +249,6 @@ function! s:AddImport(import)
         break
       endif
     endfor
-    if !exists('insertline')
-      let insertline = 1
-    endif
     let saveCursor = getpos('.')
     let linesCount = line('$')
     while (javacomplete#util#Trim(getline(insertline)) == '' && insertline < linesCount)
@@ -299,6 +297,17 @@ if !exists('s:RegularClassesDict') && exists('g:JavaComplete_RegularClasses')
   let s:RegularClassesDict = javacomplete#util#GetRegularClassesDict(g:JavaComplete_RegularClasses)
 endif
 
+function! s:GetImportOrder() abort
+  if index(g:JavaComplete_ImportOrder, '*') == -1
+      let pkg = split(javacomplete#collector#GetPackageName(), '\.')
+      if len(pkg) > 2
+        let item = join([pkg[0], pkg[1]], '.')
+        return [item, '*'] + g:JavaComplete_ImportOrder
+      endif
+  endif
+  return g:JavaComplete_ImportOrder
+endfunction
+
 function! s:SortImportsList(importsList, ...)
   let sortType = a:0 > 0 ? a:1 : g:JavaComplete_ImportSortType
   let importsListSorted = []
@@ -306,7 +315,7 @@ function! s:SortImportsList(importsList, ...)
     let beforeWildcardSorted = []
     let afterWildcardSorted = ['']
     let wildcardSeen = 0
-    for a in g:JavaComplete_ImportOrder
+    for a in s:GetImportOrder()
       if a ==? '*'
         let wildcardSeen = 1
         continue
