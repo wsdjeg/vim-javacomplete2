@@ -313,7 +313,7 @@ function! s:SortImportsList(importsList, ...)
   let importsListSorted = []
   if sortType == 'packageName'
     let beforeWildcardSorted = []
-    let afterWildcardSorted = ['']
+    let afterWildcardSorted = []
     let wildcardSeen = 0
     for a in s:GetImportOrder()
       if a ==? '*'
@@ -337,6 +337,9 @@ function! s:SortImportsList(importsList, ...)
         endif
       endif
     endfor
+    if len(a:importsList) > 0 && !empty(a:importsList[-1])
+      call add(a:importsList, '')
+    endif
     let importsListSorted = beforeWildcardSorted + a:importsList + afterWildcardSorted
   else
     let response = javacomplete#server#Communicate("-fetch-class-archives", join(a:importsList, ","), "Fetch imports jar archives")
