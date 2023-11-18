@@ -412,9 +412,9 @@ function! s:DefaultMappings() abort
   imap <silent> <buffer> <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
   imap <silent> <buffer> <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
-  vmap <silent> <buffer> <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-  vmap <silent> <buffer> <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-  vmap <silent> <buffer> <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+  xmap <silent> <buffer> <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+  xmap <silent> <buffer> <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+  xmap <silent> <buffer> <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
   nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
   nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)
