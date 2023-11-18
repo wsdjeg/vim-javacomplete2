@@ -98,63 +98,63 @@ Add this to your `.vimrc` file:
 
 `autocmd FileType java setlocal omnifunc=javacomplete#Complete`
 
-To enable smart (trying to guess import option) inserting class imports with F4, add:
+Inside `~/.vim/after/ftplugin/java.vim` (on Linux and MacOS) respectively ``%USERPROFILE%/vimfiles/after/ftplugin/java.vim`` on Microsoft Windows, to enable smart (trying to guess import option) inserting class imports with F4, add:
 
-`nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)`
+`nmap <buffer> <F4> <Plug>(JavaComplete-Imports-AddSmart)`
 
-`imap <F4> <Plug>(JavaComplete-Imports-AddSmart)`
+`imap <buffer> <F4> <Plug>(JavaComplete-Imports-AddSmart)`
 
 To enable usual (will ask for import option) inserting class imports with F5, add:
 
-`nmap <F5> <Plug>(JavaComplete-Imports-Add)`
+`nmap <buffer> <F5> <Plug>(JavaComplete-Imports-Add)`
 
-`imap <F5> <Plug>(JavaComplete-Imports-Add)`
+`imap <buffer> <F5> <Plug>(JavaComplete-Imports-Add)`
 
 To add all missing imports with F6:
 
-`nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)`
+`nmap <buffer> <F6> <Plug>(JavaComplete-Imports-AddMissing)`
 
-`imap <F6> <Plug>(JavaComplete-Imports-AddMissing)`
+`imap <buffer> <F6> <Plug>(JavaComplete-Imports-AddMissing)`
 
 To remove all unused imports with F7:
 
-`nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)`
+`nmap <buffer> <F7> <Plug>(JavaComplete-Imports-RemoveUnused)`
 
-`imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)`
+`imap <buffer> <F7> <Plug>(JavaComplete-Imports-RemoveUnused)`
 
 Default mappings:
 
 ```
-  nmap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
-  nmap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
-  nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
-  nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
+  nmap <buffer> <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
+  nmap <buffer> <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
+  nmap <buffer> <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
+  nmap <buffer> <leader>jii <Plug>(JavaComplete-Imports-Add)
 
-  imap <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
-  imap <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
-  imap <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
-  imap <C-j>ii <Plug>(JavaComplete-Imports-Add)
+  imap <buffer> <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
+  imap <buffer> <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
+  imap <buffer> <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
+  imap <buffer> <C-j>ii <Plug>(JavaComplete-Imports-Add)
 
-  nmap <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+  nmap <buffer> <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
 
-  imap <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+  imap <buffer> <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
 
-  nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
-  nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-  nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-  nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-  nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
-  nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
-  nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
-  nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
+  nmap <buffer> <leader>jA <Plug>(JavaComplete-Generate-Accessors)
+  nmap <buffer> <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+  nmap <buffer> <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+  nmap <buffer> <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+  nmap <buffer> <leader>jts <Plug>(JavaComplete-Generate-ToString)
+  nmap <buffer> <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
+  nmap <buffer> <leader>jc <Plug>(JavaComplete-Generate-Constructor)
+  nmap <buffer> <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
 
-  imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
-  imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
-  imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+  imap <buffer> <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
+  imap <buffer> <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
+  imap <buffer> <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
-  vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-  vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-  vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+  vmap <buffer> <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+  vmap <buffer> <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+  vmap <buffer> <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
   nmap <silent> <buffer> <leader>jn <Plug>(JavaComplete-Generate-NewClass)
   nmap <silent> <buffer> <leader>jN <Plug>(JavaComplete-Generate-ClassInFile)

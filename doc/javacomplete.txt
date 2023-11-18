@@ -62,81 +62,82 @@ FEATURES                                               *javacomplete-features*
 INSTALL                                                 *javacomplete-install*
 
   1. This assumes you are using `Vundle`.
-Adapt for your plugin manager of choice. Put this into your `.vimrc`.
+  Adapt for your plugin manager of choice. Put this into your `.vimrc`.
 >
   " Java completion plugin.
   Plugin 'artur-shaik/vim-javacomplete2'
 <
   2. Set 'omnifunc' option. e.g.
-
 >
   autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 <
   3. Map keys you prefer:
-For smart (trying to guess import option) insert class import with <F4>:
+  Inside `~/.vim/after/ftplugin/java.vim` (on Linux and MacOS) respectively
+  ``%USERPROFILE%/vimfiles/after/ftplugin/java.vim`` on Microsoft Windows, to
+  enable smart (trying to guess import option) inserting class imports with
+  <F4>, add:
 >
-    nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-    imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+    nmap <buffer> <F4> <Plug>(JavaComplete-Imports-AddSmart)
+    imap <buffer> <F4> <Plug>(JavaComplete-Imports-AddSmart)
 <
-For usual (will ask for import option) insert class import with <F5>:
+  For usual (will ask for import option) insert class import with <F5>:
 >
-    nmap <F5> <Plug>(JavaComplete-Imports-Add)
-    imap <F5> <Plug>(JavaComplete-Imports-Add)
+    nmap <buffer> <F5> <Plug>(JavaComplete-Imports-Add)
+    imap <buffer> <F5> <Plug>(JavaComplete-Imports-Add)
 <
-For add all missing imports with <F6>:
+  For add all missing imports with <F6>:
 >
-    nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-    imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+    nmap <buffer> <F6> <Plug>(JavaComplete-Imports-AddMissing)
+    imap <buffer> <F6> <Plug>(JavaComplete-Imports-AddMissing)
 <
-For remove all missing imports with <F7>:
+  For remove all missing imports with <F7>:
 >
-    nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-    imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+    nmap <buffer> <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+    imap <buffer> <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 <
-For sorting all imports with <F8>:
+  For sorting all imports with <F8>:
 >
-    nmap <F8> <Plug>(JavaComplete-Imports-SortImports)
-    imap <F8> <Plug>(JavaComplete-Imports-SortImports)
+    nmap <buffer> <F8> <Plug>(JavaComplete-Imports-SortImports)
+    imap <buffer> <F8> <Plug>(JavaComplete-Imports-SortImports)
 <
-
-Default mappings:
+  Default mappings:
 >
-    nmap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
-    nmap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
-    nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
-    nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
-    nmap <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
+    nmap <buffer> <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
+    nmap <buffer> <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
+    nmap <buffer> <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
+    nmap <buffer> <leader>jii <Plug>(JavaComplete-Imports-Add)
+    nmap <buffer> <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
 
-    imap <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
-    imap <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
-    imap <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
-    imap <C-j>ii <Plug>(JavaComplete-Imports-Add)
+    imap <buffer> <C-j>I <Plug>(JavaComplete-Imports-AddMissing)
+    imap <buffer> <C-j>R <Plug>(JavaComplete-Imports-RemoveUnused)
+    imap <buffer> <C-j>i <Plug>(JavaComplete-Imports-AddSmart)
+    imap <buffer> <C-j>ii <Plug>(JavaComplete-Imports-Add)
 
-    nmap <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+    nmap <buffer> <leader>jM <Plug>(JavaComplete-Generate-AbstractMethods)
 
-    imap <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
+    imap <buffer> <C-j>jM <Plug>(JavaComplete-Generate-AbstractMethods)
 
-    nmap <leader>jA <Plug>(JavaComplete-Generate-Accessors)
-    nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-    nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-    nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-    nmap <leader>jts <Plug>(JavaComplete-Generate-ToString)
-    nmap <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
-    nmap <leader>jc <Plug>(JavaComplete-Generate-Constructor)
-    nmap <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
+    nmap <buffer> <leader>jA <Plug>(JavaComplete-Generate-Accessors)
+    nmap <buffer> <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+    nmap <buffer> <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+    nmap <buffer> <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+    nmap <buffer> <leader>jts <Plug>(JavaComplete-Generate-ToString)
+    nmap <buffer> <leader>jeq <Plug>(JavaComplete-Generate-EqualsAndHashCode)
+    nmap <buffer> <leader>jc <Plug>(JavaComplete-Generate-Constructor)
+    nmap <buffer> <leader>jcc <Plug>(JavaComplete-Generate-DefaultConstructor)
 
-    imap <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
-    imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
-    imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+    imap <buffer> <C-j>s <Plug>(JavaComplete-Generate-AccessorSetter)
+    imap <buffer> <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
+    imap <buffer> <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
-    xmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-    xmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-    xmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+    xmap <buffer> <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+    xmap <buffer> <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+    xmap <buffer> <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 <
 
-  4. Javavi library will be automatcally compiled when you
-use first time.  If no libs/javavi/target is generated, check that you have
-the write permission and jdk installed.
+  4. Javavi library will be automatcally compiled when you use first time.  If
+     no libs/javavi/target is generated, check that you have the write
+     permission and jdk installed.
 
 ==============================================================================
 REQUIREMENTS                                       *javacomplete-requirements*
