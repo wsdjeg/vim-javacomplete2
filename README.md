@@ -4,11 +4,11 @@ Updated version of the original [javacomplete plugin](http://www.vim.org/scripts
 
 ## Demo
 
-![vim-javacomplete2](https://github.com/artur-shaik/vim-javacomplete2/raw/master/doc/demo.gif)
+![vim-javacomplete2](https://github.com/wsdjeg/vim-javacomplete2/raw/master/doc/demo.gif)
 
 Generics demo
 
-![vim-javacomplete2](https://github.com/artur-shaik/vim-javacomplete2/raw/master/doc/generics_demo.gif)
+![vim-javacomplete2](https://github.com/wsdjeg/vim-javacomplete2/raw/master/doc/generics_demo.gif)
 
 ## Intro
 
@@ -67,27 +67,27 @@ Run:
 
 ````Shell
 cd ~/.vim/bundle
-git clone https://github.com/artur-shaik/vim-javacomplete2.git
+git clone https://github.com/wsdjeg/vim-javacomplete2.git
 ````
 
 ### Vundle
 Add to `.vimrc`:
 
 ````vimL
-Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'wsdjeg/vim-javacomplete2'
 ````
 
 ### NeoBundle
 Add to `.vimrc`:
 
 ````vimL
-NeoBundle 'artur-shaik/vim-javacomplete2'
+NeoBundle 'wsdjeg/vim-javacomplete2'
 ````
 
 ### vim-plug
 Add to `.vimrc`:
 ````vimL
-Plug 'artur-shaik/vim-javacomplete2'
+Plug 'wsdjeg/vim-javacomplete2'
 ````
 
 ## Configuration

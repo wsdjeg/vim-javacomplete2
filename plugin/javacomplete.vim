@@ -46,7 +46,7 @@
 " @section Download, download
 " @parentsection overview
 " You can download the lastest version from this url:
-	" https://github.com/artur-shaik/vim-javacomplete2
+	" https://github.com/wsdjeg/vim-javacomplete2
 
 ""
 " @section Install, install
@@ -55,7 +55,7 @@
 " Adapt for your plugin manager of choice. Put this into your `.vimrc`.
 " >
 "   " Java completion plugin.
-"   Plugin 'artur-shaik/vim-javacomplete2'
+"   Plugin 'wsdjeg/vim-javacomplete2'
 " <
 " 2. Set 'omnifunc' option. e.g.
 " >
