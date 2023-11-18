@@ -380,7 +380,7 @@ function! s:RemoveCurrentFromCache() abort
 endfunction
 
 function! s:DefaultMappings() abort
-  if g:JavaComplete_EnableDefaultMappings
+  if !g:JavaComplete_EnableDefaultMappings
     return
   endif
 
