@@ -533,9 +533,10 @@ let g:JavaComplete_UseFQN = get(g:, 'JavaComplete_UseFQN', 0)
 " by default this option is 1, and default mappings are defined.
 " To disable default mappings, set this option to 1.
 " >
-"   let g:JavaComplete_EnableDefaultMappings = 1
+"   let g:JavaComplete_EnableDefaultMappings = 0
 " <
-let g:JavaComplete_EnableDefaultMappings = 0
+let g:JavaComplete_EnableDefaultMappings =
+      \ get(g:, 'JavaComplete_EnableDefaultMappings', 1)
 ""
 " Set pom.xml path explicitly:
 " >
