@@ -30,7 +30,7 @@ javaparser library and javacomplete.txt.
 DOWNLOAD                                               *javacomplete-download*
 
 You can download the lastest version from this url:
-https://github.com/artur-shaik/vim-javacomplete2
+https://github.com/wsdjeg/vim-javacomplete2
 
 ==============================================================================
 FEATURES                                               *javacomplete-features*
@@ -61,11 +61,11 @@ FEATURES                                               *javacomplete-features*
 ==============================================================================
 INSTALL                                                 *javacomplete-install*
 
-  1. This assumes you are using `Vundle`.
+  1. This assumes you are using `Vim-Plug`.
   Adapt for your plugin manager of choice. Put this into your `.vimrc`.
 >
   " Java completion plugin.
-  Plugin 'artur-shaik/vim-javacomplete2'
+  Plug 'wsdjeg/vim-javacomplete2'
 <
   2. Set 'omnifunc' option. e.g.
 >
