@@ -457,7 +457,8 @@ let g:JavaComplete_SourcesPath = get(g:, 'JavaComplete_SourcesPath', ''). g:PATH
 "   let g:JavaComplete_MavenRepositoryDisabled = 1
 " <
 " by default this option is disabled (0).
-let g:JavaComplete_MavenRepositoryDisabled = 0
+let g:JavaComplete_MavenRepositoryDisabled =
+      \ get(g:, 'JavaComplete_MavenRepositoryDisabled', 0)
 
 if filereadable(getcwd(). g:FILE_SEP. 'build.gradle')
     let g:JavaComplete_SourcesPath = g:JavaComplete_SourcesPath

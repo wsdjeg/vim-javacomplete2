@@ -465,14 +465,16 @@ let g:JavaComplete_InsertImports =
       \ get(g:, 'JavaComplete_InsertImports', 1)
 ""
 " Set the path of gradle executable file. by default it is empty string.
-let g:JavaComplete_GradleExecutable = ''
+let g:JavaComplete_GradleExecutable =
+      \ get(g:, 'JavaComplete_GradleExecutable', '')
 ""
 " The Java daemon should kill itself when Vim stops.
 " Also its possible to configure the timeout,
 " so if there is no request during this time the daemon will stop.
 " To configure the timemout use the following (in seconds).
 " By default this option is 0.
-let g:JavaComplete_ServerAutoShutdownTime = 0
+let g:JavaComplete_ServerAutoShutdownTime =
+      \ get(g:, 'JavaComplete_ServerAutoShutdownTime', 0)
 let g:JavaComplete_ShowExternalCommandsOutput =
       \ get(g:, 'JavaComplete_ShowExternalCommandsOutput', 0)
 
@@ -543,7 +545,8 @@ let g:JavaComplete_EnableDefaultMappings =
 "   let g:JavaComplete_PomPath = /path/to/pom.xml
 " <
 " It will be set automatically, if pom.xml is in underlying path.
-let g:JavaComplete_PomPath = ''
+let g:JavaComplete_PomPath =
+      \ get(g:, 'JavaComplete_PomPath', '')
 ""
 " Close brace on method declaration completion:
 " >
@@ -552,12 +555,14 @@ let g:JavaComplete_PomPath = ''
 " Add close brace automatically, when complete method declaration.
 " By default this option is enabled (1).
 " Disable if it conflicts with another plugins.
-let g:JavaComplete_ClosingBrace = 1
+let g:JavaComplete_ClosingBrace =
+      \ get(g:, 'JavaComplete_ClosingBrace', 1)
 
 ""
 " Set the directory where to write server logs. By default this option is
 " empty.
-let g:JavaComplete_JavaviLogDirectory = ''
+let g:JavaComplete_JavaviLogDirectory =
+      \ get(g:, 'JavaComplete_JavaviLogDirectory', '')
 let g:JavaComplete_CompletionResultSort =
       \ get(g:, 'JavaComplete_CompletionResultSort', 0)
 ""
@@ -567,7 +572,8 @@ let g:JavaComplete_CompletionResultSort =
 "   let g:JavaComplete_CustomTemplateDirectory = '~/jc_templates'
 " <
 " By default this options is empty string.
-let g:JavaComplete_CustomTemplateDirectory = ''
+let g:JavaComplete_CustomTemplateDirectory =
+      \ get(g:, 'JavaComplete_CustomTemplateDirectory', '')
 
 ""
 " @section Commands, commands
