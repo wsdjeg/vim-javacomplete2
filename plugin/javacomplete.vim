@@ -118,9 +118,9 @@
 "     imap <C-j>g <Plug>(JavaComplete-Generate-AccessorGetter)
 "     imap <C-j>a <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 " 
-"     vmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
-"     vmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
-"     vmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
+"     xmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+"     xmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+"     xmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 " <
 " 
 " 4. Javavi library will be automatcally compiled when you
